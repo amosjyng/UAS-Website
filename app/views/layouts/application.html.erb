@@ -7,15 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="header">
-  <%= link_to "Undergraduate Astronomical Society", root_path %>
+<div id="header-container">
+  <div id="header">
+    <%= link_to "Undergraduate Astronomical Society", root_path %>
+  </div>
 </div>
-<div>
-  <%= link_to "Events", events_path %>
-  <%= link_to "Officers", officers_path %>
+<div id="nav-container">
+  <div id="nav">
+    <ul>
+      <li id="selected"><%= link_to "Events", events_path %></li>
+      <li><%= link_to "Officers", officers_path %></li>
+    </ul>
+  </div>
 </div>
-<div id="content">
-  <%= yield %>
+<div id="content-container">
+  <div id="content">
+    <%= yield %>
+  </div>
 </div>
 
 </body>
