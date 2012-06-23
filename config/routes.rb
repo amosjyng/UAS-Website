@@ -1,4 +1,6 @@
 UASWebsite::Application.routes.draw do
+  resources :officers
+
   resources :events
 
   get "home/index"
