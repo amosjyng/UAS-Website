@@ -1,5 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <b>Name:</b>
+  <%= @officer.name %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @officer.position %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @officer.email %>
+</p>
+
 
 <%= link_to 'Edit', edit_officer_path(@officer) %> |
 <%= link_to 'Back', officers_path %>

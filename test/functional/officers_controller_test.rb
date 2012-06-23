@@ -18,7 +18,7 @@ class OfficersControllerTest < ActionController::TestCase
 
   test "should create officer" do
     assert_difference('Officer.count') do
-      post :create, :officer => {  }
+      post :create, :officer => { :email => @officer.email, :name => @officer.name, :position => @officer.position }
     end
 
     assert_redirected_to officer_path(assigns(:officer))
@@ -35,7 +35,7 @@ class OfficersControllerTest < ActionController::TestCase
   end
 
   test "should update officer" do
-    put :update, :id => @officer, :officer => {  }
+    put :update, :id => @officer, :officer => { :email => @officer.email, :name => @officer.name, :position => @officer.position }
     assert_redirected_to officer_path(assigns(:officer))
   end
 
