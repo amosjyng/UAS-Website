@@ -17,7 +17,7 @@ div#content-container, div#nav-container {
 }
 
 div#content-container {
-  background-color:#FFF;
+  margin-top:-1px;
 }
 
 div#header {
@@ -30,6 +30,8 @@ a {
 
 a:hover {
   text-decoration:underline;
+  color:inherit;
+  background-color:inherit;
 }
 
 div#header a {
@@ -43,7 +45,7 @@ div#header a:hover {
 }
 
 div#nav {
-  background-color:#222;
+  background-color:#000;
   width:100%;
   height:38px;
 }
@@ -52,45 +54,52 @@ div#nav ul {
   list-style:none;
   padding:0;
   margin:0;
-  background-color:#222;
 }
 
 div#nav li {
-  float:left;
   margin:0;
   margin-top:10px;
   margin-right:5px;
   display:inline-block;
+  z-index:0;
 }
 
 div#nav li a {
   color:#AAA;
-  background-color:#222;
+  background-color:#000;
   font-size:14px;
   padding:10px 1em;
-  transition: background-color 250ms, color 250ms, transform 250ms;
-  -moz-transition: background-color 250ms, color 250ms, -moz-transform 250ms; /* Firefox 4 */
-  -webkit-transition: background-color 250ms, color 250ms, -webkit-transform 250ms; /* Safari and Chrome */
-  -o-transition: background-color 250ms, color 250ms, -o-transform 250ms; /* Opera */
+  transition: background-color 250ms, color 250ms, box-shadow 250ms, transform 250ms;
+  -moz-transition: background-color 250ms, color 250ms, box-shadow 250ms, -moz-transform 250ms; /* Firefox 4 */
+  -webkit-transition: background-color 250ms, color 250ms, box-shadow 250ms, -webkit-transform 250ms; /* Safari and Chrome */
+  -o-transition: background-color 250ms, color 250ms, box-shadow 250ms, -o-transform 250ms; /* Opera */
+  padding-bottom:10px;
+  border-top-left-radius:5px 5px;
+  border-top-right-radius:5px 5px;
+
 }
 
 div#nav li a:hover {
-  background-color:#FFF;
+  background-color:#DDD;
   color:#000;
   text-decoration:none;
+  box-shadow:-5px -5px -5px #000;
+  padding-bottom:14px;
 }
 
 div#nav li#selected a {
-  transition: background-color 0, color 0, transform 0;
-  -moz-transition: background-color 0, color 0, -moz-transform 0; /* Firefox 4 */
-  -webkit-transition: background-color 0, color 0, -webkit-transform 0; /* Safari and Chrome */
-  -o-transition: background-color 0, color 0, -o-transform 0; /* Opera */
+  transition: background-color 0, color 0, box-shadow 0, transform 0;
+  -moz-transition: background-color 0, color 0, box-shadow 0, -moz-transform 0; /* Firefox 4 */
+  -webkit-transition: background-color 0, color 0, box-shadow 0, -webkit-transform 0; /* Safari and Chrome */
+  -o-transition: background-color 0, color 0, box-shadow 0, -o-transform 0; /* Opera */
   background-color:#FFF;
   color:#000;
-  padding-bottom:11px;
 }
 
 div#content {
   padding:30px;
   padding-top:5px;
+  background-color:#FFF;
+  border-radius:5px 5px;
+  z-index:5;
 }
