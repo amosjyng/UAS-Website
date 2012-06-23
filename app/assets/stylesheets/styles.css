@@ -68,7 +68,7 @@ div#nav li a {
   background-color:#222;
   font-size:14px;
   padding:10px 1em;
-  transition: background-color 250ms, color, transform 250ms;
+  transition: background-color 250ms, color 250ms, transform 250ms;
   -moz-transition: background-color 250ms, color 250ms, -moz-transform 250ms; /* Firefox 4 */
   -webkit-transition: background-color 250ms, color 250ms, -webkit-transform 250ms; /* Safari and Chrome */
   -o-transition: background-color 250ms, color 250ms, -o-transform 250ms; /* Opera */
@@ -81,6 +81,10 @@ div#nav li a:hover {
 }
 
 div#nav li#selected a {
+  transition: background-color 0, color 0, transform 0;
+  -moz-transition: background-color 0, color 0, -moz-transform 0; /* Firefox 4 */
+  -webkit-transition: background-color 0, color 0, -webkit-transform 0; /* Safari and Chrome */
+  -o-transition: background-color 0, color 0, -o-transform 0; /* Opera */
   background-color:#FFF;
   color:#000;
   padding-bottom:11px;
