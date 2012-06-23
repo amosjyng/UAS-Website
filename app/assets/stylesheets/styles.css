@@ -1,3 +1,8 @@
+div {
+  /* z-index needs this to work correctly */
+  position:relative;
+}
+
 body {
   background-image:url('starry.jpg');
 }
@@ -23,6 +28,7 @@ div#content-container {
 div#header {
   padding:20px;
   text-align:center;
+  z-index:0;
 }
 
 a {
@@ -61,7 +67,6 @@ div#nav li {
   margin-top:10px;
   margin-right:5px;
   display:inline-block;
-  z-index:0;
 }
 
 div#nav li a {
@@ -72,27 +77,27 @@ div#nav li a {
   -moz-transition: background-color 250ms, color 250ms, box-shadow 250ms, -moz-transform 250ms; /* Firefox 4 */
   -webkit-transition: background-color 250ms, color 250ms, box-shadow 250ms, -webkit-transform 250ms; /* Safari and Chrome */
   -o-transition: background-color 250ms, color 250ms, box-shadow 250ms, -o-transform 250ms; /* Opera */
-  padding-bottom:10px;
+  padding-bottom:14px;
   border-top-left-radius:5px 5px;
   border-top-right-radius:5px 5px;
 
 }
 
 div#nav li a:hover {
-  background-color:#DDD;
+  background-color:#FFF;
   color:#000;
   text-decoration:none;
-  box-shadow:-5px -5px -5px #000;
-  padding-bottom:14px;
+  box-shadow:inset 0px -9px 50px #CCC;
 }
 
-div#nav li#selected a {
+div#nav li#selected a, div#nav li#selected a:hover {
   transition: background-color 0, color 0, box-shadow 0, transform 0;
   -moz-transition: background-color 0, color 0, box-shadow 0, -moz-transform 0; /* Firefox 4 */
   -webkit-transition: background-color 0, color 0, box-shadow 0, -webkit-transform 0; /* Safari and Chrome */
   -o-transition: background-color 0, color 0, box-shadow 0, -o-transform 0; /* Opera */
   background-color:#FFF;
   color:#000;
+  box-shadow:none;
 }
 
 div#content {
@@ -100,5 +105,5 @@ div#content {
   padding-top:5px;
   background-color:#FFF;
   border-radius:5px 5px;
-  z-index:5;
+  z-index:9;
 }
