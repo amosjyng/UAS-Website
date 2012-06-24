@@ -5,8 +5,9 @@ class Event < ActiveRecord::Base
   validates :content, :length => {:minimum => 5}
 
   def summary
-    if content.length > 100
-      return content[0..300] + '...'
+    max_length = 300
+    if content.length > max_length
+      return content[0..max_length] + '...'
     else
       return content
     end
