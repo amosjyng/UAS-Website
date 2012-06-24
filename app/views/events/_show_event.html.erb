@@ -2,9 +2,9 @@
   <h1><%= link_to event.title, event %></h1>
   <span class="event_time"><%= event.human_time %></span>
   <% if summarize %>
-    <%= event.summary %>
+    <%= raw event.summary.html_newlines %>
   <% else %>
-    <%= event.content %>
+    <%= raw event.content.html_newlines %>
   <% end %>
   <div class="admin_tools">
     <%= link_to 'Edit', edit_event_path(event), :class => 'admin' %> | 
