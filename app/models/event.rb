@@ -16,7 +16,7 @@ class Event < ActiveRecord::Base
 
   def date=(day)
     begin
-      current_time = Time.at(0).to_datetime
+      current_time = Time.now.to_datetime
       unless time.nil?
         current_time = Time.at(time).to_datetime
       end
@@ -40,7 +40,7 @@ class Event < ActiveRecord::Base
 
   def day_time=(dt)
     begin
-      current_time = Time.at(0).to_datetime
+      current_time = Time.now.to_datetime
       unless time.nil?
         current_time = Time.at(time).to_datetime
       end
