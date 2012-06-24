@@ -7,8 +7,9 @@
     <%= event.content %>
   <% end %>
   <div class="admin_tools">
-    <%= link_to 'Edit', edit_event_path(event) %> | 
+    <%= link_to 'Edit', edit_event_path(event), :class => 'admin' %> | 
     <%= link_to 'Delete', event, :method => :delete,
-        :data => { :confirm => 'Remove "' + event.title + '"?' } %>
+        :data => { :confirm => 'Remove "' + event.title + '"?' },
+        :class => 'admin' %>
   </div>
 </div>

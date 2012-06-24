@@ -12,14 +12,6 @@ div.admin_tools {
   margin-top:10px;
 }
 
-div.admin_tools a {
-  color:#888;
-}
-
-div.admin_tools a:hover {
-  color:#000;
-}
-
 #ui-datepicker-div {
   background-color:#FFF;
   border-radius:5px;
