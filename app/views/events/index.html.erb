@@ -1,26 +1,16 @@
 <h1>Listing events</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Date</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @events.each do |event| %>
-  <tr>
-    <td><%= event.title %></td>
-    <td><%= event.date %></td>
-    <td><%= event.content %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
+  <div class="event_view">
+    <h1><%= link_to event.title, event %></h1>
+    <span class="event_time"><%= event.date %></span>
+    <p><%= event.summary %></p>
+    <div class="admin_tools">
+      <%= link_to 'Edit', edit_event_path(event) %> | 
+      <%= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+    </div>
+    <hr>
 <% end %>
-</table>
 
 <br />
 
