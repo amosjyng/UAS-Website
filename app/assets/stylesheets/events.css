@@ -1,3 +1,13 @@
+span.event_time {
+  top:0;
+  right:0;
+  position:absolute;
+}
+
+div.event_view h1 a {
+  color:#000;
+}
+
 #ui-datepicker-div {
   background-color:#FFF;
   border-radius:5px;

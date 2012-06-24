@@ -1,3 +1,7 @@
+h1 {
+  color:#000;
+}
+
 div {
   /* z-index needs this to work correctly */
   position:relative;
@@ -14,11 +18,11 @@ div#header-container, div#nav-container, div#content-container {
 }
 
 div#header-container {
-  width:80%;
+  width:100%;
 }
 
 div#content-container, div#nav-container {
-  width:60%;
+  width:70%;
 }
 
 div#content-container {
