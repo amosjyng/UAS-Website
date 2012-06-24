@@ -15,9 +15,15 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.text_field :date %>
+  <div class="field" id="time_field">
+    <div id="date_field">
+      <%= f.label :date %><br />
+      <%= f.text_field :date %>
+    </div>
+    <div id="day_time_field">
+      <%= f.label :day_time %><br />
+      <%= f.text_field :day_time %>
+    </div>
   </div>
   <div class="field">
     <%= f.label :content %><br />
