@@ -3,6 +3,8 @@ class Event < ActiveRecord::Base
 
   validates :title, :date, :day_time, :content, :presence => true
   validates :content, :length => {:minimum => 5}
+  validate :date_valid
+  validate :time_valid
 
   def date
     if time.nil?
@@ -13,14 +15,19 @@ class Event < ActiveRecord::Base
   end
 
   def date=(day)
-    current_time = Time.at(0).to_datetime
-    unless time.nil?
-      current_time = Time.at(time).to_datetime
+    begin
+      current_time = Time.at(0).to_datetime
+      unless time.nil?
+        current_time = Time.at(time).to_datetime
+      end
+      d = Date.strptime(day, '%m/%d/%Y')
+      self.time = DateTime.new(d.year, d.month, d.day, current_time.hour,
+                               current_time.min, current_time.sec,
+                               current_time.zone).to_time.to_i
+      @date_success = true
+    rescue
+      @date_success = false
     end
-    d = Date.strptime(day, '%m/%d/%Y')
-    self.time = DateTime.new(d.year, d.month, d.day, current_time.hour,
-                             current_time.min, current_time.sec,
-                             current_time.zone).to_time.to_i
   end
 
   def day_time
@@ -32,14 +39,19 @@ class Event < ActiveRecord::Base
   end
 
   def day_time=(dt)
-    current_time = Time.at(0).to_datetime
-    unless time.nil?
-      current_time = Time.at(time).to_datetime
+    begin
+      current_time = Time.at(0).to_datetime
+      unless time.nil?
+        current_time = Time.at(time).to_datetime
+      end
+      t = DateTime.strptime(current_time.strftime('%Y %m %d ') + dt, '%Y %m %d %I:%M %p')
+      self.time = DateTime.new(current_time.year, current_time.month,
+                               current_time.day, t.hour, t.min, 0,
+                               current_time.zone).to_time.to_i
+      @time_success = true
+    rescue
+      @time_success = false
     end
-    t = DateTime.strptime(current_time.strftime('%Y %m %d ') + dt, '%Y %m %d %I:%M %p')
-    self.time = DateTime.new(current_time.year, current_time.month,
-                             current_time.day, t.hour, t.min, 0,
-                             current_time.zone).to_time.to_i
   end
 
   def summary
@@ -53,5 +65,14 @@ class Event < ActiveRecord::Base
 
   def human_time
     Time.at(time).strftime('%A, %B %e at %l:%M %p')
+  end
+
+  private
+  def date_valid
+    errors.add(:date, 'format not valid!') unless @date_success
+  end
+
+  def time_valid
+    errors.add(:day_time, 'format not valid!') unless @time_success
   end
 end
