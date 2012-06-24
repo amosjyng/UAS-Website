@@ -2,6 +2,7 @@ span.event_time {
   top:0;
   right:0;
   position:absolute;
+  color:#888;
 }
 
 div.event_view h1 a {
