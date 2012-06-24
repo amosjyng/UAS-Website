@@ -1,15 +1,7 @@
 <% @events.each do |event| %>
-  <div class="event_view">
-    <h1><%= link_to event.title, event %></h1>
-    <span class="event_time"><%= event.date %></span>
-    <p><%= event.summary %></p>
-    <div class="admin_tools">
-      <%= link_to 'Edit', edit_event_path(event) %> | 
-      <%= link_to 'Delete', event, :method => :delete,
-          :data => { :confirm => 'Remove "' + event.title + '"?' } %>
-    </div>
-    <hr>
-  </div>
+  <%= render :partial => 'show_event',
+              :locals => { :event => event, :summarize => true } %>
+  <hr>
 <% end %>
 
 <br />

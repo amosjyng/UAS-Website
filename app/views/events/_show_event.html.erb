@@ -1,0 +1,14 @@
+<div class="event_view">
+  <h1><%= link_to event.title, event %></h1>
+  <span class="event_time"><%= event.date %></span>
+  <% if summarize %>
+    <%= event.summary %>
+  <% else %>
+    <%= event.content %>
+  <% end %>
+  <div class="admin_tools">
+    <%= link_to 'Edit', edit_event_path(event) %> | 
+    <%= link_to 'Delete', event, :method => :delete,
+        :data => { :confirm => 'Remove "' + event.title + '"?' } %>
+  </div>
+</div>

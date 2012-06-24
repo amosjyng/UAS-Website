@@ -1,3 +1,16 @@
+a, a:visited, a:hover, a:active {
+  color:#A00;
+}
+
+a {
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration:underline;
+  background-color:inherit;
+}
+
 h1 {
   color:#000;
 }
@@ -9,6 +22,7 @@ div {
 
 body {
   background-image:url('starry.jpg');
+  padding-bottom:50px;
 }
 
 /* center everything */
@@ -33,16 +47,6 @@ div#header {
   padding:20px;
   text-align:center;
   z-index:0;
-}
-
-a {
-  text-decoration:none;
-}
-
-a:hover {
-  text-decoration:underline;
-  color:inherit;
-  background-color:inherit;
 }
 
 div#header a {
