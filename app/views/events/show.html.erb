@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back', events_path %>
-
 <%= render :partial => 'show_event',
            :locals => { :event => @event, :summarize => false } %>
+
+<%= link_to 'Back', events_path %>
