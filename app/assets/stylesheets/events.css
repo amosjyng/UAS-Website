@@ -17,6 +17,19 @@ div.admin_tools {
   margin-top:10px;
 }
 
+div.field, div.field input, div.field textarea {
+  width:100%;
+}
+
+div#day_time_field, div#date_field {
+  width:49%;
+  margin:inherit 0;
+}
+
+div#date_field {
+  float:right;
+}
+
 #ui-datepicker-div {
   background-color:#FFF;
   border-radius:5px;
