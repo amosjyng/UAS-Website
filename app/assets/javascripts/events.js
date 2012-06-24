@@ -1,4 +1,4 @@
 $(document).ready(function () {
-  $("#event_date").datepicker({minDate: new Date()});
+  $("#event_time").datepicker({minDate: new Date()});
   $("#ui-datepicker-div").hide();
 });

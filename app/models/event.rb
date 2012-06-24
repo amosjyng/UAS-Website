@@ -12,4 +12,8 @@ class Event < ActiveRecord::Base
       return content
     end
   end
+
+  def human_time
+    return Time.at(time).strftime('%A, %B %e at %l:%M %p')
+  end
 end
