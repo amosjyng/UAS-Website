@@ -26,8 +26,10 @@ div#day_time_field, div#date_field {
   margin:inherit 0;
 }
 
-div#date_field {
-  float:right;
+div#day_time_field {
+  right:0;
+  top:0;
+  position:absolute;
 }
 
 #ui-datepicker-div {
