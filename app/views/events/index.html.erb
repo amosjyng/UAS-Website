@@ -5,7 +5,8 @@
     <p><%= event.summary %></p>
     <div class="admin_tools">
       <%= link_to 'Edit', edit_event_path(event) %> | 
-      <%= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+      <%= link_to 'Delete', event, :method => :delete,
+          :data => { :confirm => 'Remove "' + event.title + '"?' } %>
     </div>
     <hr>
   </div>
