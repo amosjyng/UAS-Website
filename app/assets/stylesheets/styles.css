@@ -132,13 +132,22 @@ div#error_explanation_container {
   width:100%;
 }
 
-div#error_explanation {
-  background-color:#A00;
+div#error_explanation, div#notice {
   border:none;
   border-radius:5px;
   color:#FFF;
   padding:15px;
   width:auto;
+  margin-top:15px;
+}
+
+div#notice {
+  background-color:#0A0;
+  padding:10px 15px;
+}
+
+div#error_explanation {
+  background-color:#A00;
 }
 
 div#error_explanation h2 {
