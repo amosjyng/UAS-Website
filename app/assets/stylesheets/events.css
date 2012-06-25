@@ -45,13 +45,6 @@ div#day_time_field {
   display:none;
 }
 
-div.field_with_errors {
-  width:100%;
-  /* black on red text is hard to read */
-  color:#FFF;
-  padding:0px;
-}
-
 #ui-datepicker-div {
   background-color:#FFF;
   border-radius:5px;

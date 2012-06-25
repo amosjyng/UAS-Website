@@ -23,6 +23,10 @@ h1 {
   color:#000;
 }
 
+ul, li {
+  list-style-type:disc;
+}
+
 div {
   /* z-index needs this to work correctly */
   position:relative;
@@ -122,4 +126,39 @@ div#content {
   background-color:#FFF;
   border-radius:5px 5px;
   z-index:9;
+}
+
+div#error_explanation_container {
+  width:100%;
+}
+
+div#error_explanation {
+  background-color:#A00;
+  border:none;
+  border-radius:5px;
+  color:#FFF;
+  padding:15px;
+  width:auto;
+}
+
+div#error_explanation h2 {
+  background-color:transparent;
+}
+
+div#error_explanation ul {
+  margin:0;
+}
+
+div#error_explanation ul, div#error_explanation ul li {
+  list-style-type:disc;
+}
+
+div.field_with_errors {
+  width:100%;
+  background-color:inherit;
+  padding:0px;
+}
+
+div.field_with_errors, div.field_with_errors input {
+  color:#F00;
 }
