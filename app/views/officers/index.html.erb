@@ -12,12 +12,10 @@
 
 <% @officers.each do |officer| %>
   <tr>
-    <td><%= officer.name %></td>
+    <td><%= link_to officer.name, officer %></td>
     <td><%= officer.position %></td>
-    <td><%= officer.email %></td>
-    <td><%= link_to 'Show', officer %></td>
-    <td><%= link_to 'Edit', edit_officer_path(officer) %></td>
-    <td><%= link_to 'Destroy', officer, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_officer_path(officer), :class => 'admin' %></td>
+    <td><%= link_to 'Destroy', officer, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'admin' %></td>
   </tr>
 <% end %>
 </table>
