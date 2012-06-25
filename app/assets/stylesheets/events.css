@@ -25,7 +25,6 @@ div.field input, div.field textarea {
   width:100%;
   display:block;
   padding:0;
-  border-width:0;
 }
 
 div#day_time_field, div#date_field {
