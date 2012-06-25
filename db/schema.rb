@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120624035327) do
+ActiveRecord::Schema.define(:version => 20120625042827) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(:version => 20120624035327) do
     t.string   "name"
     t.string   "position"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "encrypted_password"
   end
 
 end
