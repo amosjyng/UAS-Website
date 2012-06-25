@@ -2,7 +2,8 @@
   <% if @event.errors.any? %>
     <div id="error_explanation_container">
       <div id="error_explanation">
-        <h2>Oops! There were <%= pluralize(@event.errors.count, "error") %>:</h2>
+        <% were = @event.errors.count == 1 ? 'was' : 'were' %>
+        <h2>Oops! There <%= were %> <%= pluralize(@event.errors.count, "error") %>:</h2>
 
         <ul>
         <% @event.errors.full_messages.each do |msg| %>
