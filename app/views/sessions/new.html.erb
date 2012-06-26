@@ -1,5 +1,13 @@
 <h1>Officer sign in</h1>
 
+<% unless flash[:error].nil? %>
+  <div id="error_explanation_container">
+    <div id="error_explanation" class="no_ul">
+      <h2>Oops! <%= flash[:error] %></h2>
+    </div>
+  </div>
+<% end %>
+
 <div id="sign_in_form">
   <%= form_for(:session, :url => sessions_path) do |f| %>
     <%= f.label :email %>

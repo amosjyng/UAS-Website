@@ -143,6 +143,9 @@ div#error_explanation, div#notice {
 
 div#notice {
   background-color:#0A0;
+}
+
+div.no_ul, div#notice.no_ul, div#error_explanation.no_ul {
   padding:10px 15px;
 }
 
