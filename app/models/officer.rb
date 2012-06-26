@@ -12,10 +12,8 @@ class Officer < ActiveRecord::Base
     encrypted_password == encrypt(submitted_password)
   end
 
-  def authenticate(email, submitted_password)
-    officer = Officer.where({:email => email}).first
-    return nil if user.nil?
-    return officer if offier.password_correct? submitted_password
+  def authenticate(submitted_password)
+    return self if password_correct? submitted_password
   end
 
   private

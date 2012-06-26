@@ -3,6 +3,14 @@ UASWebsite::Application.routes.draw do
 
   resources :officers
 
+  # I'm planning to have Officers be created only by other officers, or
+  # by admin with access to the database, so no need for creating new
+  # users
+  resources :sessions, :only => [:create, :destroy]
+
+  match '/signin',  :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy', :via => :delete
+
   get "home/index"
 
   # The priority is based upon order of creation:
