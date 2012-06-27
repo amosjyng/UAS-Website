@@ -2,8 +2,6 @@ class Officer < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :email, :name, :position, :password, :password_confirmation
 
-  validates :password, :presence     => true,
-                       :confirmation => true
   validates :name, :email, :position, :presence => true
 
   before_save :encrypt_password
@@ -19,6 +17,7 @@ class Officer < ActiveRecord::Base
   private
 
   def encrypt_password
+    self.password = 'TODO: MAKE RANDOM!!!' if password.nil?
     self.salt = make_salt unless password_correct?(password)
     self.encrypted_password = encrypt(password)
   end
