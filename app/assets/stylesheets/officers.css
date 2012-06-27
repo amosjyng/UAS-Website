@@ -1,0 +1,13 @@
+#officer_sign_in {
+  position:absolute;
+  top:20px;
+  right:30px;
+}
+
+#sign_in_form {
+  width:100%;
+}
+
+#sign_in_field {
+  width:49%;
+}
