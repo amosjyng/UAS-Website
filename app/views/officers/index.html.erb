@@ -10,6 +10,10 @@
 
 <h1>Listing officers</h1>
 
+<% unless flash[:notice].nil? %>
+  <div id="notice" class="no_ul"><%= flash[:notice] %></div>
+<% end %>
+
 <table>
   <tr>
     <th>Name</th>
