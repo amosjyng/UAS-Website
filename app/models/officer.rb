@@ -4,7 +4,7 @@ class Officer < ActiveRecord::Base
 
   validates :name, :email, :position, :presence => true
 
-  before_save :encrypt_password
+  before_save :encrypt_password, :create_remember_token
 
   def password_correct?(submitted_password)
     encrypted_password == encrypt(submitted_password)
@@ -17,7 +17,7 @@ class Officer < ActiveRecord::Base
   private
 
   def encrypt_password
-    self.password = 'TODO: MAKE RANDOM!!!' if password.nil?
+    self.password = SecureRandom.hex if password.nil?
     self.salt = make_salt unless password_correct?(password)
     self.encrypted_password = encrypt(password)
   end
@@ -32,5 +32,9 @@ class Officer < ActiveRecord::Base
 
   def secure_hash(string)
     Digest::SHA2.hexdigest(string)
+  end
+
+  def create_remember_token
+    self.remember_token = SecureRandom.hex
   end
 end

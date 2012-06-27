@@ -11,7 +11,7 @@ a:hover {
   background-color:inherit;
 }
 
-a.admin {
+a.admin, .admin {
   color:#888;
 }
 

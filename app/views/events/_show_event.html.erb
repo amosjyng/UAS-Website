@@ -6,10 +6,12 @@
   <% else %>
     <%= raw event.content.html_newlines %>
   <% end %>
-  <div class="admin_tools">
-    <%= link_to 'Edit', edit_event_path(event), :class => 'admin' %> | 
-    <%= link_to 'Delete', event, :method => :delete,
-        :data => { :confirm => 'Remove "' + event.title + '"?' },
-        :class => 'admin' %>
-  </div>
+  <% if signed_in? %>
+    <div class="admin_tools">
+      <%= link_to 'Edit', edit_event_path(event), :class => 'admin' %> | 
+      <%= link_to 'Delete', event, :method => :delete,
+          :data => { :confirm => 'Remove "' + event.title + '"?' },
+          :class => 'admin' %>
+    </div>
+  <% end %>
 </div>

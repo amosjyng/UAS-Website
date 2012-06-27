@@ -1,5 +1,11 @@
-<div id="officer_sign_in">
-  <%= link_to 'Officer Sign-In', '/signin', :class => 'admin' %>
+<div id="officer_sign_in" class="admin">
+  <% if signed_in? %>
+    Signed in as <%= current_user.name %> (<%= link_to 'sign out',
+                                                   '/signout',
+                                                   :class => 'admin' %>)
+  <% else %>
+    <%= link_to 'Officer Sign-In', '/signin', :class => 'admin' %>
+  <% end %>
 </div>
 
 <h1>Listing officers</h1>
