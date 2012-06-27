@@ -8,6 +8,12 @@
   width:100%;
 }
 
-#sign_in_field {
+div#email_field, div#password_field {
   width:49%;
+}
+
+div#password_field {
+  top:0;
+  right:0;
+  position:absolute;
 }
