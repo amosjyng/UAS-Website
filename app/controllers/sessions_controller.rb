@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
         flash.now[:error] = "You've entered the wrong password!"
         format.html { render :action => 'new' }
       else
+        sign_in @officer
         format.html { redirect_to @officer, :notice => "You've signed in!" }
       end
     end

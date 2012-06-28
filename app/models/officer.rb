@@ -1,10 +1,10 @@
 class Officer < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :email, :name, :position, :password, :password_confirmation
+  attr_accessible :email, :name, :position, :password, :password_confirmation, :remember_token
 
   validates :name, :email, :position, :presence => true
 
-  before_save :encrypt_password, :create_remember_token
+  before_save :encrypt_password
 
   def password_correct?(submitted_password)
     encrypted_password == encrypt(submitted_password)
@@ -14,10 +14,15 @@ class Officer < ActiveRecord::Base
     return self if password_correct? submitted_password
   end
 
+  def create_remember_token
+    self.remember_token = SecureRandom.hex
+  end
+
   private
 
   def encrypt_password
-    self.password = SecureRandom.hex if password.nil?
+    self.password = SecureRandom.hex if encrypted_password.nil?
+    puts self.password
     self.salt = make_salt unless password_correct?(password)
     self.encrypted_password = encrypt(password)
   end
@@ -32,9 +37,5 @@ class Officer < ActiveRecord::Base
 
   def secure_hash(string)
     Digest::SHA2.hexdigest(string)
-  end
-
-  def create_remember_token
-    self.remember_token = SecureRandom.hex
   end
 end
