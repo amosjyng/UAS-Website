@@ -14,3 +14,8 @@ $ rake db:migrate
 $ rails server
 
 and direct your browser to localhost:3000
+
+To add the first officer (which must be added manually into the database), start up rails console from the commandline and do something similar to:
+
+$ rails console
+=> Officer.create :email => "amosjyng@gmail.com", :name => "Amos Ng", :position => "Webmaster", :password => "something secure"
