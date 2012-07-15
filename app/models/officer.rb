@@ -17,6 +17,11 @@ class Officer < ActiveRecord::Base
   def create_remember_token
     self.remember_token = SecureRandom.hex
   end
+  
+  def change_password(new_password)
+    self.password = new_password
+    save
+  end
 
   private
 
