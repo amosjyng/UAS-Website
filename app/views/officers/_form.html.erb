@@ -11,7 +11,6 @@
     </div>
   <% end %>
   
-  <%= f.file_field :avatar %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -23,6 +22,10 @@
   <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label "photo" %>
+    <%= f.file_field :avatar %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -7,7 +7,7 @@
   <% end %>
 </div>
 
-<h1>Listing officers</h1>
+<h1>Officers of UAS</h1>
 
 <% unless flash[:notice].nil? %>
   <div id="notice" class="no_ul"><%= flash[:notice] %></div>
@@ -22,7 +22,7 @@
 
 <% @officers.each do |officer| %>
   <tr>
-    <td><%= image_tag officer.avatar.url(:medium), :width => 100, :height => 100 %></td>
+    <td><%= image_tag officer.avatar.url(:medium), :height => 100 %></td>
     <td><%= link_to officer.name, officer %></td>
     <td><%= officer.position %></td>
     <% if can_edit? officer %>
