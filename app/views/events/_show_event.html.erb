@@ -6,7 +6,7 @@
   <% else %>
     <%= raw event.content.html_newlines %>
   <% end %>
-  <% if signed_in? %>
+  <% if can_edit? %>
     <div class="admin_tools">
       <%= link_to 'Edit', edit_event_path(event), :class => 'admin' %> | 
       <%= link_to 'Delete', event, :method => :delete,

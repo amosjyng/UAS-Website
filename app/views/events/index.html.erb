@@ -1,9 +1,14 @@
-<% @events.each do |event| %>
+<% @events.each_with_index do |event, i| %>
   <%= render :partial => 'show_event',
               :locals => { :event => event, :summarize => true } %>
-  <hr>
+  <%= "<hr>".html_safe unless i + 1 == @events.length %>
 <% end %>
 
-<br />
+<% if can_edit? %>
+  <hr />
 
-<%= link_to 'New Event', new_event_path, :class => 'admin' %>
+  <br />
+    
+  <%= link_to 'New Event', new_event_path, :class => 'admin' %>
+
+<% end %>

@@ -17,6 +17,7 @@
   <%= @officer.email %>
 </p>
 
-
-<%= link_to 'Edit', edit_officer_path(@officer) %> |
 <%= link_to 'Back', officers_path %>
+<% if can_edit? @officer %>
+  | <%= link_to 'Edit', edit_officer_path(@officer), :class => "admin" %>
+<% end %>

@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def create
     @officer = Officer.where("email = ?", params[:session][:email]).first
     respond_to do |format|

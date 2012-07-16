@@ -27,12 +27,15 @@
   <tr>
     <td><%= link_to officer.name, officer %></td>
     <td><%= officer.position %></td>
-    <td><%= link_to 'Edit', edit_officer_path(officer), :class => 'admin' %></td>
-    <td><%= link_to 'Destroy', officer, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'admin' %></td>
+    <% if can_edit? officer %>
+      <td><%= link_to 'Edit', edit_officer_path(officer), :class => 'admin' %></td>
+      <td><%= link_to 'Destroy', officer, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'admin' %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Officer', new_officer_path, :class => 'admin' %>
+<% if can_edit? %>
+  <br />
+  <%= link_to 'New Officer', new_officer_path, :class => 'admin' %>
+<% end %>
