@@ -1,6 +1,7 @@
 class Officer < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :email, :name, :position, :password, :password_confirmation, :remember_token
+  attr_accessible :email, :name, :position, :password, :password_confirmation, \
+                  :remember_token, :is_president
 
   validates :name, :email, :position, :presence => true
 
