@@ -18,6 +18,10 @@ div#password_field {
   position:absolute;
 }
 
+div#officer_image {
+  width:49%;
+}
+
 img {
   display:block;
 }
