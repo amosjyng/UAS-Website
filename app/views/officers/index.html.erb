@@ -29,13 +29,19 @@
     <td><%= officer.position %></td>
     <% if can_edit? officer %>
       <td><%= link_to 'Edit', edit_officer_path(officer), :class => 'admin' %></td>
-      <td><%= link_to 'Destroy', officer, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'admin' %></td>
+      <% if current_user.is_president %>
+        <td>
+          <%= link_to 'Remove', officer, :method => :delete, \
+              :data => { :confirm => "Really remove #{officer.name} as an officer?" }, \
+              :class => 'admin' %>
+        </td>
+      <% end %>
     <% end %>
   </tr>
 <% end %>
 </table>
 
-<% if can_edit? %>
+<% if !current_user.nil? && current_user.is_president %>
   <br />
   <%= link_to 'New Officer', new_officer_path, :class => 'admin' %>
 <% end %>
