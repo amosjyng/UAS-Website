@@ -4,7 +4,7 @@ class Officer < ActiveRecord::Base
 
   validates :name, :email, :position, :presence => true
 
-  before_save :encrypt_password
+  before_save :encrypt_password, :set_remember_token
 
   def password_correct?(submitted_password)
     encrypted_password == encrypt(submitted_password)
@@ -41,5 +41,9 @@ class Officer < ActiveRecord::Base
 
   def secure_hash(string)
     Digest::SHA2.hexdigest(string)
+  end
+  
+  def set_remember_token
+    self.remember_token ||= SecureRandom.hex
   end
 end

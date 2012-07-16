@@ -1,6 +1,5 @@
 module SessionsHelper
   def sign_in(officer)
-    officer.create_remember_token
     cookies.permanent[:remember_token] = officer.remember_token
     self.current_user = officer
   end
