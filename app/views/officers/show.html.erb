@@ -2,25 +2,24 @@
   <div id="notice" class="no_ul"><%= notice %></div>
 <% end %>
 
-<div id="officer_image">
-  <%= image_tag @officer.avatar.url, :width => "100%", :height => "100%" %>
+<div id="officer_display">
+  <div id="officer_image">
+    <%= image_tag @officer.avatar.url, :width => "100%", :height => "100%" %>
+  </div>
+
+  <div id="officer_info_container">
+    <div id="officer_info">
+      <h1><%= @officer.name %><span id="officer_position"><%= @officer.position %></span></h1>
+      
+      
+      <p>
+        Email: <%= mail_to @officer.email %>
+      </p>
+    </div>
+  </div>
 </div>
 
-<p>
-  <b>Name:</b>
-  <%= @officer.name %>
-</p>
-
-<p>
-  <b>Position:</b>
-  <%= @officer.position %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @officer.email %>
-</p>
-
+<br />
 <%= link_to 'Back', officers_path %>
 <% if can_edit? @officer %>
   | <%= link_to 'Edit', edit_officer_path(@officer), :class => "admin" %>
