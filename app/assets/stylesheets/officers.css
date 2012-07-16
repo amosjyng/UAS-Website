@@ -17,3 +17,7 @@ div#password_field {
   right:0;
   position:absolute;
 }
+
+img {
+  display:block;
+}

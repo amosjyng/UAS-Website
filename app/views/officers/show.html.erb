@@ -2,6 +2,10 @@
   <div id="notice" class="no_ul"><%= notice %></div>
 <% end %>
 
+<div id="officer_image">
+  <%= image_tag @officer.avatar.url %>
+</div>
+
 <p>
   <b>Name:</b>
   <%= @officer.name %>

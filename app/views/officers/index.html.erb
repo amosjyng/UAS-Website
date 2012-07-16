@@ -1,8 +1,7 @@
 <div id="officer_sign_in" class="admin">
   <% if signed_in? %>
-    Signed in as <%= current_user.name %> (<%= link_to 'sign out',
-                                                   '/signout',
-                                                   :class => 'admin' %>)
+    Signed in as <%= link_to current_user.name, current_user, :class => 'admin' %>
+    (<%= link_to 'sign out', '/signout', :class => 'admin' %>)
   <% else %>
     <%= link_to 'Officer Sign-In', '/signin', :class => 'admin' %>
   <% end %>
@@ -16,15 +15,14 @@
 
 <table>
   <tr>
+    <th></th>
     <th>Name</th>
     <th>Position</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @officers.each do |officer| %>
   <tr>
+    <td><%= image_tag officer.avatar.url(:medium) %></td>
     <td><%= link_to officer.name, officer %></td>
     <td><%= officer.position %></td>
     <% if can_edit? officer %>

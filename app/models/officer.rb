@@ -1,8 +1,9 @@
 class Officer < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :email, :name, :position, :password, :password_confirmation, \
-                  :remember_token, :is_president
-
+                  :remember_token, :is_president, :avatar
+  has_attached_file :avatar, :styles => {:medium => "200x200>"}
+  
   validates :name, :email, :position, :presence => true
 
   before_save :encrypt_password, :set_remember_token
