@@ -39,10 +39,10 @@ div#officer_info {
 }
 
 span#officer_position {
-    margin-left:13px;
-    font-size:14px;
-    font-weight:lighter;
-    font-style:italic;
+  margin-left:13px;
+  font-size:14px;
+  font-weight:lighter;
+  font-style:italic;
 }
 
 div#officer_info img {
@@ -59,6 +59,7 @@ img {
 }
 
 div.officer_card {
+  display:table-cell;
   padding:20px;
   border:1px;
   max-width:200px;
