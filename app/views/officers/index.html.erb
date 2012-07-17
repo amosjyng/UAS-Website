@@ -13,31 +13,23 @@
   <div id="notice" class="no_ul"><%= flash[:notice] %></div>
 <% end %>
 
-<table>
-  <tr>
-    <th></th>
-    <th>Name</th>
-    <th>Position</th>
-  </tr>
-
 <% @officers.each do |officer| %>
-  <tr>
-    <td><%= image_tag officer.avatar.url(:medium), :height => 100 %></td>
-    <td><%= link_to officer.name, officer %></td>
-    <td><%= officer.position %></td>
-    <% if can_edit? officer %>
-      <td><%= link_to 'Edit', edit_officer_path(officer), :class => 'admin' %></td>
-      <% if current_user.is_president %>
-        <td>
-          <%= link_to 'Remove', officer, :method => :delete, \
-              :data => { :confirm => "Really remove #{officer.name} as an officer?" }, \
-              :class => 'admin' %>
-        </td>
+  <div class="officer_card">
+    <%= image_tag officer.avatar.url(:medium) %>
+    <span class="officer_info"><b><%= link_to officer.name, officer %></b></span>
+    <span class="officer_info"><%= officer.position %></span>
+    <span class="officer_info">
+      <% if can_edit? officer %>
+        <%= link_to 'Edit', edit_officer_path(officer), :class => 'admin' %>
+        <% if current_user.is_president %>
+            | <%= link_to 'Remove', officer, :method => :delete, \
+                :data => { :confirm => "Really remove #{officer.name} as an officer?" }, \
+                :class => 'admin' %>
+        <% end %>
       <% end %>
-    <% end %>
-  </tr>
+    </span>
+  </div>
 <% end %>
-</table>
 
 <% if !current_user.nil? && current_user.is_president %>
   <br />
