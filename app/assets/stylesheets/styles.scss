@@ -101,9 +101,8 @@ div#nav {
         font-size:14px;
         padding:10px 1em;
         
-        padding-bottom:14px;
-        border-top-left-radius:5px 5px;
-        border-top-right-radius:5px 5px;
+        padding-bottom:18px;
+        @include rounded;
         
         &:hover {
           background-color:#FFF;
