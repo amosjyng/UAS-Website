@@ -1,5 +1,7 @@
 <% unless notice.nil? || notice == '' %>
-  <div id="notice" class="no_ul"><%= notice %></div>
+  <div id="notice_container">
+    <div id="notice"><h2><%= notice %></h2></div>
+  </div>
 <% end %>
 
 <%= render :partial => 'show_event',

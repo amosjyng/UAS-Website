@@ -117,7 +117,7 @@ div#nav {
       }
       
       &#selected a {
-        background-color:#FFF;
+        background-color:$foreground-color;
         color:#000;
         box-shadow:none;
       }
@@ -127,12 +127,12 @@ div#nav {
 
 div#content {
   padding:30px;
-  background-color:#FFF;
+  background-color:$foreground-color;
   border-radius:5px 5px;
   z-index:9;
 }
 
-div#error_explanation_container {
+div#error_explanation_container, div#notice_container {
   width:100%;
 }
 
@@ -140,33 +140,31 @@ div#error_explanation, div#notice {
   border:none;
   border-radius:5px;
   color:#FFF;
-  padding:15px;
   width:auto;
   margin-top:15px;
+  padding:15px;
 }
 
 div#notice {
   background-color:#0A0;
-}
-
-div.no_ul, div#notice.no_ul, div#error_explanation.no_ul {
+  /* notices usually don't have lists buffing them up vertically */
   padding:10px 15px;
 }
 
 div#error_explanation {
   background-color:#A00;
-}
-
-div#error_explanation h2 {
-  background-color:transparent;
-}
-
-div#error_explanation ul {
-  margin:0;
-}
-
-div#error_explanation ul, div#error_explanation ul li {
-  list-style-type:disc;
+  
+  h2 {
+    background-color:transparent;
+  }
+  
+  ul {
+    margin:0;
+    
+    li {
+      list-style-type:disc;
+    }
+  }
 }
 
 div.field_with_errors {
