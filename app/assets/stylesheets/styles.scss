@@ -138,7 +138,6 @@ div#error_explanation, div#notice {
   @include rounded;
   color:#FFF;
   width:auto;
-  margin-top:15px;
   padding:15px;
 }
 
@@ -146,6 +145,7 @@ div#notice {
   background-color:#0A0;
   /* notices usually don't have lists buffing them up vertically */
   padding:10px 15px;
+  margin-top:-7px;
 }
 
 div#error_explanation {
