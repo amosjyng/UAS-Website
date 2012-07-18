@@ -17,19 +17,20 @@
 
 <% @officers.each do |officer| %>
   <div class="officer_card" style="height:<%= @card_height %>px;">
-    <%= image_tag officer.avatar.url(:medium) %>
+    <%= link_to image_tag(officer.avatar.url(:medium)), officer %>
     <span class="officer_info"><b><%= link_to officer.name, officer %></b></span>
     <span class="officer_info"><%= officer.position %></span>
-    <span class="officer_info">
-      <% if can_edit? officer %>
+    
+    <% if can_edit? officer %>
+      <span class="officer_info">
         <%= link_to 'Edit', edit_officer_path(officer), :class => 'admin' %>
         <% if current_user.is_president %>
             | <%= link_to 'Remove', officer, :method => :delete, \
                 :data => { :confirm => "Really remove #{officer.name} as an officer?" }, \
                 :class => 'admin' %>
         <% end %>
-      <% end %>
-    </span>
+      </span>
+    <% end %>
   </div>
 <% end %>
 
