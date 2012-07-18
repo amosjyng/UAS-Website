@@ -1,0 +1,7 @@
+@mixin transitions($time) {
+  $transition:background-color $time, color $time, box-shadow $time, transform $time;
+  transition:$transition;
+  -moz-transition:$transition;
+  -webkit-transition:$transition;
+  -o-transition:$transition;
+}

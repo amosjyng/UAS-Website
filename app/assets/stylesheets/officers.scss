@@ -1,3 +1,5 @@
+@import "transition";
+
 #officer_sign_in {
   position:absolute;
   top:20px;
@@ -63,18 +65,12 @@ div.officer_card {
   padding:20px;
   max-width:200px;
   background-color:#FFF;
-  transition: background-color 500ms, transform 500ms;
-  -moz-transition: background-color 500ms, -moz-transform 500ms; /* Firefox 4 */
-  -webkit-transition: background-color 500ms, -webkit-transform 500ms; /* Safari and Chrome */
-  -o-transition: background-color 500ms, -o-transform 500ms; /* Opera */
+  
+  @include transitions(500ms);
 }
 
 div.officer_card:hover {
   background-color:#FFC;
-  transition: background-color 500ms, transform 500ms;
-  -moz-transition: background-color 500ms, -moz-transform 500ms; /* Firefox 4 */
-  -webkit-transition: background-color 500ms, -webkit-transform 500ms; /* Safari and Chrome */
-  -o-transition: background-color 500ms, -o-transform 500ms; /* Opera */
 }
 
 div.officer_card img {
