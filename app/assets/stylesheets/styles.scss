@@ -2,6 +2,14 @@ $foreground-color:#FFF;
 
 @import "sitewide_partials";
 
+img {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  
+  @include rounded;
+}
+
 a, a:visited, a:hover, a:active {
   color:#A00;
 }

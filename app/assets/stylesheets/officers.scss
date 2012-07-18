@@ -8,58 +8,50 @@
 
 #sign_in_form {
   width:100%;
-}
-
-div#email_field, div#password_field {
-  width:49%;
-}
-
-div#password_field {
-  top:0;
-  right:0;
-  position:absolute;
+  
+  form div {
+    width:49%;
+    
+    &#password_field {
+      top:0;
+      right:0;
+      position:absolute;
+    }
+  }
 }
 
 div#officer_display {
   width:100%;
-}
-
-div#officer_image {
-  width:49%;
-}
-
-div#officer_info_container {
-  width:49%;
-  position:absolute;
-  right:0;
-  top:0;
-}
-
-div#officer_info {
-  width:100%;
-  padding:0 20px;
-}
-
-span#officer_position {
-  margin-left:13px;
-  font-size:14px;
-  font-weight:lighter;
-  font-style:italic;
-}
-
-div#officer_image img {
-  width:100%;
-  height:100%;  
-  max-width:500px;
-  max-height:500px;
-}
-
-img {
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
   
-  @include rounded;
+  div#officer_image {
+    width:49%;
+    
+    img {
+      width:100%;
+      height:100%;  
+      max-width:500px;
+      max-height:500px;
+    }
+  }
+  
+  div#officer_info_container {
+    width:49%;
+    position:absolute;
+    right:0;
+    top:0;
+    
+    div#officer_info {
+      width:100%;
+      padding:0 20px;
+      
+      span#officer_position {
+        margin-left:13px;
+        font-size:14px;
+        font-weight:lighter;
+        font-style:italic;
+      }
+    }
+  }
 }
 
 div.officer_card {
