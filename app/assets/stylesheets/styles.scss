@@ -1,3 +1,5 @@
+$foreground-color:#FFF;
+
 a, a:visited, a:hover, a:active {
   color:#A00;
 }
@@ -113,23 +115,14 @@ div#nav {
           box-shadow:inset 0px -9px 50px #CCC;
         }
       }
-    }
-    
-    li#selected {
-      @extend li;
       
+      &#selected a {
+        background-color:#FFF;
+        color:#000;
+        box-shadow:none;
+      }
     }
   }
-}
-
-div#nav li#selected a, div#nav li#selected a:hover {
-  transition: background-color 0, color 0, box-shadow 0, transform 0;
-  -moz-transition: background-color 0, color 0, box-shadow 0, -moz-transform 0; /* Firefox 4 */
-  -webkit-transition: background-color 0, color 0, box-shadow 0, -webkit-transform 0; /* Safari and Chrome */
-  -o-transition: background-color 0, color 0, box-shadow 0, -o-transform 0; /* Opera */
-  background-color:#FFF;
-  color:#000;
-  box-shadow:none;
 }
 
 div#content {
