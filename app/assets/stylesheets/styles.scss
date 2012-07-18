@@ -4,14 +4,13 @@ a, a:visited, a:hover, a:active {
 
 a {
   text-decoration:none;
+  &:hover {
+    text-decoration:underline;
+    background-color:inherit;
+  }
 }
 
-a:hover {
-  text-decoration:underline;
-  background-color:inherit;
-}
-
-a.admin, .admin {
+.admin, a.admin {
   color:#888;
 }
 
@@ -50,6 +49,18 @@ div#header-container, div#nav-container, div#content-container {
 
 div#header-container {
   width:100%;
+  
+  div#header {
+    padding:20px;
+    text-align:center;
+    z-index:0;
+    
+    a {
+      color:#DDD;
+      font-size:35px;
+      font-weight:bold;
+    }
+  }
 }
 
 div#content-container, div#nav-container {
@@ -60,18 +71,6 @@ div#content-container {
   margin-top:-1px;
 }
 
-div#header {
-  padding:20px;
-  text-align:center;
-  z-index:0;
-}
-
-div#header a {
-  color:#DDD;
-  font-size:35px;
-  font-weight:bold;
-}
-
 div#header a:hover {
   text-decoration:none;
 }
@@ -79,40 +78,48 @@ div#header a:hover {
 div#nav {
   width:100%;
   height:38px;
-}
-
-div#nav ul {
-  list-style:none;
-  padding:0;
-  margin:0;
-}
-
-div#nav li {
-  margin:0;
-  margin-top:10px;
-  margin-right:5px;
-  display:inline-block;
-}
-
-div#nav li a {
-  color:#AAA;
-  font-size:14px;
-  padding:10px 1em;
-  transition: background-color 250ms, color 250ms, box-shadow 250ms, transform 250ms;
-  -moz-transition: background-color 250ms, color 250ms, box-shadow 250ms, -moz-transform 250ms; /* Firefox 4 */
-  -webkit-transition: background-color 250ms, color 250ms, box-shadow 250ms, -webkit-transform 250ms; /* Safari and Chrome */
-  -o-transition: background-color 250ms, color 250ms, box-shadow 250ms, -o-transform 250ms; /* Opera */
-  padding-bottom:14px;
-  border-top-left-radius:5px 5px;
-  border-top-right-radius:5px 5px;
-
-}
-
-div#nav li a:hover {
-  background-color:#FFF;
-  color:#000;
-  text-decoration:none;
-  box-shadow:inset 0px -9px 50px #CCC;
+  
+  ul {
+    list-style:none;
+    padding:0;
+    margin:0;
+    
+    li {
+      margin:0;
+      margin-top:10px;
+      margin-right:5px;
+      display:inline-block;
+      
+      a {
+        $time:250ms;
+        $transition:background-color $time, color $time, box-shadow $time, transform $time;
+        transition:$transition;
+        -moz-transition:$transition;
+        -webkit-transition:$transition;
+        -o-transition:$transition;
+        
+        color:#AAA;
+        font-size:14px;
+        padding:10px 1em;
+        
+        padding-bottom:14px;
+        border-top-left-radius:5px 5px;
+        border-top-right-radius:5px 5px;
+        
+        &:hover {
+          background-color:#FFF;
+          color:#000;
+          text-decoration:none;
+          box-shadow:inset 0px -9px 50px #CCC;
+        }
+      }
+    }
+    
+    li#selected {
+      @extend li;
+      
+    }
+  }
 }
 
 div#nav li#selected a, div#nav li#selected a:hover {
