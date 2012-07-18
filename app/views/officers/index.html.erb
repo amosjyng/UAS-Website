@@ -16,7 +16,7 @@
 <% end %>
 
 <% @officers.each do |officer| %>
-  <div class="officer_card">
+  <div class="officer_card" style="height:<%= @card_height %>px;">
     <%= image_tag officer.avatar.url(:medium) %>
     <span class="officer_info"><b><%= link_to officer.name, officer %></b></span>
     <span class="officer_info"><%= officer.position %></span>

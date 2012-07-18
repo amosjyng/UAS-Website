@@ -1,4 +1,4 @@
-@import "transition";
+@import "sitewide_partials";
 
 #officer_sign_in {
   position:absolute;
@@ -47,7 +47,7 @@ span#officer_position {
   font-style:italic;
 }
 
-div#officer_info img {
+div#officer_image img {
   width:100%;
   height:100%;  
   max-width:500px;

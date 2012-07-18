@@ -3,6 +3,7 @@ class OfficersController < ApplicationController
   # GET /officers.json
   def index
     @officers = Officer.all
+    @card_height = signed_in? ? 250 : 235;
 
     respond_to do |format|
       format.html # index.html.erb

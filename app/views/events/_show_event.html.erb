@@ -1,5 +1,10 @@
 <div class="event_view">
-  <h1><%= link_to event.title, event %></h1>
+  <h1><% if summarize %>
+        <%= link_to event.title, event %>
+      <% else %>
+        <%= event.title %>
+      <% end %>
+  </h1>
   <span class="event_time"><%= event.human_time %></span>
   <% if summarize %>
     <%= raw event.summary.html_newlines %>

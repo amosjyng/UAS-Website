@@ -1,6 +1,6 @@
 $foreground-color:#FFF;
 
-@import "transition";
+@import "sitewide_partials";
 
 a, a:visited, a:hover, a:active {
   color:#A00;
@@ -125,8 +125,8 @@ div#nav {
 div#content {
   padding:30px;
   background-color:$foreground-color;
-  border-radius:5px 5px;
   z-index:9;
+  @include rounded;
 }
 
 div#error_explanation_container, div#notice_container {
@@ -135,7 +135,7 @@ div#error_explanation_container, div#notice_container {
 
 div#error_explanation, div#notice {
   border:none;
-  border-radius:5px;
+  @include rounded;
   color:#FFF;
   width:auto;
   margin-top:15px;

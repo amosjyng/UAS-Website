@@ -5,3 +5,7 @@
   -webkit-transition:$transition;
   -o-transition:$transition;
 }
+
+@mixin rounded {
+  border-radius:5px 5px;
+}
