@@ -29,7 +29,7 @@ class Officer < ActiveRecord::Base
   private
 
   def encrypt_password
-    if encrypted_password.nil?
+    if encrypted_password.nil? || !self.password.to_s.empty?
       self.password ||= SecureRandom.hex
       self.salt = make_salt unless password_correct?(password)
       self.encrypted_password = encrypt(password)
