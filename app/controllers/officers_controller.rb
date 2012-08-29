@@ -1,3 +1,5 @@
+require 'net/smtp'
+
 class OfficersController < ApplicationController
   # GET /officers
   # GET /officers.json
@@ -45,7 +47,11 @@ class OfficersController < ApplicationController
 
     respond_to do |format|
       if @officer.save
-        format.html { redirect_to @officer, :notice => 'Officer was successfully created.' }
+        temp_password = SecureRandom.hex
+        @officer.change_password temp_password
+        UserMailer.creation_notice(@officer, temp_password).deliver
+        format.html { redirect_to @officer, \
+          :notice => "Officer was successfully created. An e-mail has been sent to #{@officer.email}." }
         format.json { render :json => @officer, :status => :created, :location => @officer }
       else
         format.html { render :action => "new" }

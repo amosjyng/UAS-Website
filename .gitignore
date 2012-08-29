@@ -14,8 +14,15 @@
 /log/*.log
 /tmp
 
+# Ignore uploaded user pictures
+/public/system
+
 # Ignore Mac OS X Finder files
 *.DS_Store
 
 # Ignore Vim swap files
 *.swp
+
+# Ignore Eclipse project files
+*.buildpath
+*.project

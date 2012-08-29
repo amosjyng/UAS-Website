@@ -113,6 +113,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer (= 3.2.6)
   coffee-rails (~> 3.2.1)
   jquery-rails
   json
