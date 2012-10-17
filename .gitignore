@@ -26,3 +26,5 @@
 # Ignore Eclipse project files
 *.buildpath
 *.project
+
+.idea
