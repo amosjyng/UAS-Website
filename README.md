@@ -17,3 +17,11 @@ To add the first officer (which must be added manually into the database), start
 
     $ rails console
     => Officer.create :email => "amosjyng@gmail.com", :name => "Amos Ng", :position => "Webmaster", :password => "something secure", is_president => "true"
+
+Next, set the environment variable UAS_EMAIL_PASSWORD:
+
+    UAS_EMAIL_PASSWORD="whatever the uas.ucla@gmail.com password is"
+
+On Heroku, use:
+
+    heroku config:add UAS_EMAIL_PASSWORD="whatever the password is"

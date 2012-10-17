@@ -3,7 +3,7 @@ ActionMailer::Base.smtp_settings = {
   :port => 587,
   :domain => "uas.physics.ucla.edu",
   :user_name => "uas.ucla",
-  :password => "##### DO NOT COMMIT #####",
+  :password => ENV['UAS_EMAIL_PASSWORD'],
   :authentication => "plain",
   :enable_starttls_auto => true
 }
