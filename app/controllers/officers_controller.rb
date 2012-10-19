@@ -5,7 +5,6 @@ class OfficersController < ApplicationController
   # GET /officers.json
   def index
     @officers = Officer.all
-    @card_height = 235
 
     respond_to do |format|
       format.html # index.html.erb

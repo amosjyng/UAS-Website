@@ -57,7 +57,7 @@ div.officer_card {
   display:inline-block;
   vertical-align:middle;
   padding:20px;
-  max-width:200px;
+  width:200px;
   background-color:#FFF;
   
   @include transitions(500ms);
@@ -65,13 +65,18 @@ div.officer_card {
   &:hover {
     background-color:#FFC;
   }
-  
-  img {
+
+  div.officer_pic_container {
     margin-bottom:15px;
-    height:75%;
-    
-    &:hover {
-      box-shadow:0px 3px 7px #555;
+    width:175px;
+    height:175px;
+    margin-left:auto;
+    margin-right:auto;
+
+    img {
+      &:hover {
+        box-shadow:0px 3px 7px #555;
+      }
     }
   }
   
