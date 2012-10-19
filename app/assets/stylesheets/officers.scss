@@ -58,6 +58,7 @@ div.officer_card {
   vertical-align:middle;
   padding:20px;
   width:200px;
+  height:235px;
   background-color:#FFF;
   
   @include transitions(500ms);
@@ -74,6 +75,7 @@ div.officer_card {
     margin-right:auto;
 
     img {
+      @include transitions(150ms);
       &:hover {
         box-shadow:0px 3px 7px #555;
       }
