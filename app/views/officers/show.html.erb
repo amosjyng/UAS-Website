@@ -17,6 +17,12 @@
       <p>
         Email: <%= mail_to @officer.email %>
       </p>
+
+      <% unless @officer.description.empty? %>
+        <hr>
+
+        <p><%= @officer.description.html_newlines.html_safe %></p>
+      <% end %>
     </div>
   </div>
 </div>
