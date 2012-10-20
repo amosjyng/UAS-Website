@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
     if time.nil?
       return Time.now.strftime('%m/%d/%Y')
     else
-      Time.at(time).strftime('%m/%d/%Y')
+      time.strftime('%m/%d/%Y')
     end
   end
 
@@ -18,12 +18,12 @@ class Event < ActiveRecord::Base
     begin
       current_time = Time.now.to_datetime
       unless time.nil?
-        current_time = Time.at(time).to_datetime
+        current_time = time
       end
       d = Date.strptime(day, '%m/%d/%Y')
       self.time = DateTime.new(d.year, d.month, d.day, current_time.hour,
                                current_time.min, current_time.sec,
-                               current_time.zone).to_time.to_i
+                               current_time.zone).strftime '%Y-%m-%d %H:%M'
       @date_success = true
     rescue
       @date_success = false
@@ -34,7 +34,7 @@ class Event < ActiveRecord::Base
     if time.nil?
       return Time.now.beginning_of_hour.strftime('%I:%M %p')
     else
-      return Time.at(time).strftime('%I:%M %p')
+      return time.strftime('%I:%M %p')
     end
   end
 
@@ -42,12 +42,12 @@ class Event < ActiveRecord::Base
     begin
       current_time = Time.now.to_datetime
       unless time.nil?
-        current_time = Time.at(time).to_datetime
+        current_time = time
       end
       t = DateTime.strptime(current_time.strftime('%Y %m %d ') + dt, '%Y %m %d %I:%M %p')
       self.time = DateTime.new(current_time.year, current_time.month,
                                current_time.day, t.hour, t.min, 0,
-                               current_time.zone).to_time.to_i
+                               current_time.zone).strftime '%Y-%m-%d %H:%M'
       @time_success = true
     rescue
       @time_success = false
@@ -64,7 +64,7 @@ class Event < ActiveRecord::Base
   end
 
   def human_time
-    Time.at(time).strftime('%A, %B %e at %l:%M %p')
+    time.strftime('%A, %B %e at %l:%M %p')
   end
 
   private
