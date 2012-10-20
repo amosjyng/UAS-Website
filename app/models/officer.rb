@@ -3,8 +3,14 @@ class Officer < ActiveRecord::Base
   attr_accessible :email, :name, :position, :password, :password_confirmation, \
                   :remember_token, :is_president, :avatar
   has_attached_file :avatar, :styles => { :medium => "175x175>" },
-                    :default_url => 'default_:style.png'
-  
+                    :default_url => 'default_:style.png',
+                    :storage => :s3,
+                    :bucket => 'uas_at_ucla',
+                    :s3_credentials => {
+                        :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+                        :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+                    }
+
   validates :name, :email, :position, :presence => true
 
   before_save :encrypt_password, :set_remember_token

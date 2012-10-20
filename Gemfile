@@ -30,6 +30,8 @@ end
 
 gem 'jquery-rails'
 gem 'paperclip', '~> 3.0'
+gem 'aws-sdk'
+gem 'aws-s3'
 
 gem 'actionmailer', '3.2.6'
 
