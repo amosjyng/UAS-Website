@@ -1,9 +1,15 @@
+@mixin all_browsers($property_name, $value) {
+  #{$property_name}:$value;
+  -moz-#{$property_name}:$value;
+  -webkit-#{$property_name}:$value;
+  -o-#{$property_name}:$value;
+}
+
 @mixin transitions($time) {
-  $transition:background-color $time, color $time, box-shadow $time, transform $time;
-  transition:$transition;
-  -moz-transition:$transition;
-  -webkit-transition:$transition;
-  -o-transition:$transition;
+  $transition-property:background-color, color, box-shadow, transform;
+  @include all_browsers(transition-property, $transition-property);
+  @include all_browsers(transition-duration, $time);
+  @include all_browsers(transition-timing-function, linear);
 }
 
 @mixin rounded {
