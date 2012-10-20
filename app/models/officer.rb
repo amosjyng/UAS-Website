@@ -2,8 +2,10 @@ class Officer < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :email, :name, :position, :password, :password_confirmation, \
                   :remember_token, :is_president, :avatar
-  has_attached_file :avatar, :styles => { :medium => "175x175>" },
+  has_attached_file :avatar, :styles => { :medium => "175x175>",
+                                          :normal => "500x500>" },
                     :default_url => 'default_:style.png',
+                    :default_style => :normal,
                     :storage => :s3,
                     :bucket => 'uas_at_ucla',
                     :s3_credentials => {
